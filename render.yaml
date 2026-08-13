@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: shoreline-backend
+    runtime: python
+    plan: free
+    buildCommand: pip install -r HH-backend/requirements.txt
+    startCommand: cd HH-backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: PYTHON_VERSION
+        value: "3.13"
+      - key: PORT
+        value: 8000
+      # Set these in Render Dashboard (marked sync: false so they aren't committed)
+      - key: DATABASE_URL
+        sync: false
+      - key: CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+    disk:
+      name: uploads
+      mountPath: /opt/render/project/src/HH-backend/uploads
+      sizeGB: 1
