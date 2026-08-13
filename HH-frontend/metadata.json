@@ -1,0 +1,6 @@
+{
+  "name": "Shoreline — Frame & Builder ID Card Generator",
+  "description": "Brutalist Tropics branded PFP frame and Builder ID Card generator for Shoreline with real-time preview, AI title generation, and share on X.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
